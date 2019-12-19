@@ -1,0 +1,20 @@
+{
+  "name": "wizardsurvey",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "bcrypt": "^3.0.7",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "^0.4.1",
+    "popper.js": "^1.16.0",
+    "simpl-schema": "^1.5.6"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2"
+  }
+}
