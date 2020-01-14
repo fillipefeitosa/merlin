@@ -1,0 +1,12 @@
+html, body{
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+.note {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    max-width: 400px;
+    border: 1px dotted #bbb;
+}

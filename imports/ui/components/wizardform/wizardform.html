@@ -1,0 +1,329 @@
+<template name="wizardform">
+
+    <div class="container">
+        <form id="temp">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</template>
+
+<template name="page1">
+    <div class="container">
+        <h1 class="text-center">Perfil</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="profile_job">
+                    <h4>Indique a função que exerce: </h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="0">
+                        <label class="form-check-label" for="exampleRadios1">
+                            Professor/a
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="1">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Educador/a
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Funcionário não docente na área da educação/ensino
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="3">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Membro de uma associação de país
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Representante político
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Funcionário autárquico
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form id="profile_education">
+                    <h4>Indique o nível máximo de qualificação que alcançou: </h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="0" >
+                        <label class="form-check-label" for="exampleRadios1">
+                            Inferior ao ensino básico completo (9º ano)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="1">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Ensino básico completo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Ensino secundário completo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="3">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Curso superior completo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Mestrado
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Doutoramento
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <form id="profile_sex">
+                    <h4>Indique seu género:    </h4>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option1" autocomplete="off" value="0"> Masculino
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off" value="1"> Feminino
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option3" autocomplete="off" value="2"> Outro
+                        </label>
+                    </div>
+                    <br><br>
+
+                </form>
+
+                <label for="cus_range">Custom range</label>
+
+                <input type="range" class="custom-range" id="cus_range" name="range">
+            </div>
+
+
+        </div>
+        <br><br>
+        <a class="btn btn-info float-right" href="/page2" id='next' role="button">Próximo</a>
+    </div>
+</template>
+<template name="test">
+    <div class="container h-100 d-flex">
+        <div class="jumbotron my-auto">
+            <h1 class="display-3">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        </div>
+    </div>
+    <div class="note small bg-light p-2">
+        Vertical align single element in full height flexbox container
+    </div>
+
+</template>
+
+<template name="comparissionTemplate">
+    <div class="container-fluid h-100">
+        <!-- Page Title -->
+        <div class="row">
+            <div class="col-md-12 text-center my-auto">
+                <h5>Indique qual cenário é melhor arrastando a barra abaixo para a esquerda ou para a direita</h5>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                {{> Template.dynamic template=imageLeft}}
+            </div>
+            <div class="col-md-6">
+                <!-- Start of Comparission Text -->
+                <div class="container">
+
+                    <div class="row align-items-center">
+                        <!-- Tables with scenarios data -->
+                        <div class="col-md-6">
+                            <h5 class="text-center">Alternativa 1</h5>
+                            {{> Template.dynamic template=descriptionLeft}}
+                        </div>
+                        <div class="col-md-6 align-self-center">
+                            <h5 class="text-center">Alternativa 2</h5>
+                            {{> Template.dynamic template=descriptionRight}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row text-center align-items-center">
+                        <div class="col-md-12 text-center">
+                            <p id='medidor'>
+                                Arraste o slider para esquerda ou para a direita.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-sm-2  text-right"><i class="fas fa-angle-left icon-2x"></i></div> -->
+                        <div class="col-sm-12 text-center">
+
+                            <input type="range" class="custom-range" id="cus_range" name="range">
+                        </div>
+                        <!-- <div class="col-sm-2  text-left"><i class="fas fa-angle-right"></i></div> -->
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="col-md-3">
+                {{> Template.dynamic template=imageRight}}
+                <!-- <img src="img/inq_2.png" class="img-fluid" alt="" /> -->
+            </div>
+
+        </div>
+        <br><br>
+        <a class="btn btn-info float-right" href='/page' id='next' role="button">Próximo</a>
+
+    </div>
+
+</template>
+
+<!-- Cenário 1 - Alternativa 1 -->
+<template name="cen1_alt_1_image">
+    <img src="img/cen1_alt_1.png" class="img-fluid" alt="" />
+</template>
+
+<template name="cen1_alt_1">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 30 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 20% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 80€ por ano<br>
+
+    <b>Custo total</b>: 800.000€ por ano<br>
+</template>
+<!-- Cenário 1 - Alternativa 2 -->
+<template name="cen1_alt_2_image">
+    <img src="img/cen1_alt_2.png" class="img-fluid" alt="" />
+</template>
+<template name="cen1_alt_2">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 20 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 10% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 140€ por ano<br>
+
+    <b>Custo total</b>: 1.400.000€ por ano<br>
+</template>
+
+<!-- Cenário 1 - Alternativa 3 -->
+<template name="cen1_alt_3_image">
+    <img src="img/cen1_alt_3.png" class="img-fluid" alt="" />
+</template>
+<template name="cen1_alt_3">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 10 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 5% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 195€ por ano<br>
+
+    <b>Custo total</b>: 1.950.000€ por ano<br>
+</template>
+
+<!-- Cenário 1 - Alternativa 4 -->
+<template name="cen1_alt_4_image">
+    <img src="img/cen1_alt_4.png" class="img-fluid" alt="" />
+</template>
+<template name="cen1_alt_4">
+
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 5 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 0% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 250€ por ano<br>
+
+    <b>Custo total</b>: 2.500.000€ por ano<br>
+</template>
+
+<!-- CENÁRIO 2 TEMPLATES -->
+<!-- Cenário 2 - Alternativa 1 -->
+<template name="cen2_alt_1_image">
+    <img src="img/cen2_alt_1.png" class="img-fluid" alt="" />
+</template>
+
+<template name="cen2_alt_1">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 40 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 40% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 80€ por ano<br>
+
+    <b>Custo total</b>: 800.000€ por ano<br>
+</template>
+<!-- Cenário 2 - Alternativa 2 -->
+<template name="cen2_alt_2_image">
+    <img src="img/cen2_alt_2.png" class="img-fluid" alt="" />
+</template>
+<template name="cen2_alt_2">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 30 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 30% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 140€ por ano<br>
+
+    <b>Custo total</b>: 1.400.000€ por ano<br>
+</template>
+
+<!-- Cenário 2 - Alternativa 3 -->
+<template name="cen2_alt_3_image">
+    <img src="img/cen2_alt_3.png" class="img-fluid" alt="" />
+</template>
+<template name="cen2_alt_3">
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 10 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 5% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 195€ por ano<br>
+
+    <b>Custo total</b>: 1.950.000€ por ano<br>
+</template>
+
+<!-- Cenário 2 - Alternativa 4 -->
+<template name="cen2_alt_4_image">
+    <img src="img/cen2_alt_4.png" class="img-fluid" alt="" />
+</template>
+<template name="cen2_alt_4">
+
+    <b>Tempo médio</b> de deslocação dos alunos (por dia) em transporte escolar: 5 minutos<br>
+
+    <b>Percentagem</b> de alunos com deslocações superiores a 30 minutos: 0% <br>
+
+    <b>Custo</b> de funcionamento das escolas por munícipe: 250€ por ano<br>
+
+    <b>Custo total</b>: 2.500.000€ por ano<br>
+</template>
