@@ -39,7 +39,7 @@ Template.page1.events({
         Session.set("test_range", value);
     },
     'click #next'(event){
-        sessionVariablesNames = ['profile_job','profile_education','profile_sex','test_range'];
+        sessionVariablesNames = ['profile_job','profile_education','profile_sex'];
         sessionVariables = [];
         // Get all variables from this page stored in session
         for (var i=0; i<sessionVariablesNames.length; i++){
@@ -62,6 +62,9 @@ Template.page1.events({
 
 //  ------- PAGE 3 Events --------
 
+Template.comparissionTemplate.onRendered(function(){
+
+});
 
 Template.comparissionTemplate.events({
     'change #cus_range'(event){
