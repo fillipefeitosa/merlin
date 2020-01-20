@@ -14,14 +14,19 @@ FlowRouter.notFound = {
   },
 };
 
-
-
 // Exposed group
 exposed = FlowRouter.group({});
 exposed.route('/', {
     name: 'App.home',
     action: function(){
         BlazeLayout.render("App_home", { pageContent:'instructions'});
+    }
+});
+
+exposed.route('/thanks', {
+    name: 'App.thanks',
+    action: function(){
+        BlazeLayout.render("App_home", { pageContent:'thanks'});
     }
 });
 
