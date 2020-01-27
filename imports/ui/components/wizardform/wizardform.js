@@ -64,104 +64,47 @@ Template.page1.events({
 //  ------- PAGE 3 Events --------
 
 Template.comparissionTemplate.onRendered(function(){
-    $(function() {
-        let $document = $(document);
-        let selector = '[data-rangeslider]';
-        let $element = $(selector);
-        // For ie8 support
-        let textContent = ('textContent' in document) ? 'textContent' : 'innerText';
-        // Example functionality to demonstrate a value feedback
-        function valueOutput(element) {
-            let value = element.value;
-            let output = element.parentNode.getElementsByTagName('output')[0] || element.parentNode.parentNode.getElementsByTagName('output')[0];
-            output[textContent] = value;
+    $(document).on('input', '#cus_range', function() {
+        $('#slider_value').html( $(this).val() );
+        $('#medidor_img').removeClass();
+        if ($(this).val() >= 48 && $(this).val() <=52) {
+            $('#medidor').text('Não tenho preferência');
+            $('#medidor_img').addClass("fas fa-equals text-info fa-lg");
+            $('#cus_range').val(50);
+        } else if($(this).val()<48){
+            $('#medidor').text('Prefiro ligeiramente a de baixo');
+            $('#medidor_img').addClass("fas fa-arrow-circle-down text-info fa-lg");
+            if($(this).val()<=30){$('#medidor').text('Prefiro a alternativa de baixo')};
+            if($(this).val()<=10){$('#medidor').text('Prefiro MUITO a alternativa de baixo')};
+        } else if ($(this).val()>52){
+            $('#medidor').text('Prefiro ligeiramente a de cima');
+            $('#medidor_img').addClass("fas fa-arrow-circle-up text-info fa-lg");
+            if($(this).val()>=70){$('#medidor').text('Prefiro a alternativa de cima')};
+            if($(this).val()>=90){$('#medidor').text('Prefiro MUITO a alternativa de cima')};
         }
-        $document.on('input', 'input[type="range"], ' + selector, function(e) {
-            valueOutput(e.target);
-        });
-        // Example functionality to demonstrate disabled functionality
-        $document.on('click', '#js-example-disabled button[data-behaviour="toggle"]', function(e) {
-            let $inputRange = $(selector, e.target.parentNode);
-            if ($inputRange[0].disabled) {
-                $inputRange.prop('disabled', false);
-            } else {
-                $inputRange.prop('disabled', true);
-            }
-            $inputRange.rangeslider('update');
-        });
-        // Example functionality to demonstrate programmatic value changes
-        $document.on('click', '#js-example-change-value button', function(e) {
-            let $inputRange = $(selector, e.target.parentNode);
-            let value = $('input[type="number"]', e.target.parentNode)[0].value;
-            $inputRange.val(value).change();
-        });
-        // Example functionality to demonstrate programmatic attribute changes
-        $document.on('click', '#js-example-change-attributes button', function(e) {
-            let $inputRange = $(selector, e.target.parentNode);
-            let attributes = {
-                min: $('input[name="min"]', e.target.parentNode)[0].value,
-                max: $('input[name="max"]', e.target.parentNode)[0].value,
-                step: $('input[name="step"]', e.target.parentNode)[0].value
-            };
-            $inputRange.attr(attributes);
-            $inputRange.rangeslider('update', true);
-        });
-        // Example functionality to demonstrate destroy functionality
-        $document
-        .on('click', '#js-example-destroy button[data-behaviour="destroy"]', function(e) {
-            $(selector, e.target.parentNode).rangeslider('destroy');
-        })
-        .on('click', '#js-example-destroy button[data-behaviour="initialize"]', function(e) {
-            $(selector, e.target.parentNode).rangeslider({
-                polyfill: false
-            });
-        });
-        // Example functionality to test initialisation on hidden elements
-        $document
-        .on('click', '#js-example-hidden button[data-behaviour="toggle"]', function(e) {
-            let $container = $(e.target.previousElementSibling);
-            $container.toggle();
-        });
-        // Basic rangeslider initialization
-        $element.rangeslider({
-            // Deactivate the feature detection
-            polyfill: false,
-            // Callback function
-            onInit() {
-                valueOutput(this.$element[0]);
-            },
-            // Callback function
-            onSlide(position, value) {
-                console.log('onSlide');
-                console.log('position: ' + position, 'value: ' + value);
-            },
-            // Callback function
-            onSlideEnd(position, value) {
-                console.log('onSlideEnd');
-                console.log('position: ' + position, 'value: ' + value);
-            }
-        });
+
     });
 
 });
 
 Template.comparissionTemplate.events({
+
     'change #cus_range'(event){
         const target = event.target;
         const value = target.value;
         let routeName = FlowRouter.getRouteName()
-        $('#medidor_img').removeClass();
-        if (value == 50) {
-            $('#medidor').text('Eu acho que as duas alternativas tem o mesmo valor');
-            $('#medidor_img').addClass("fas fa-equals text-info fa-lg");
-        } else if(value<50){
-            $('#medidor').text('Eu prefiro a alternativa de baixo');
-            $('#medidor_img').addClass("fas fa-arrow-circle-down text-info fa-lg");
-        } else {
-            $('#medidor').text('Eu prefiro a alternativa de cima');
-            $('#medidor_img').addClass("fas fa-arrow-circle-up text-info fa-lg");
-        }
         Session.set(routeName, value);
+    },
+    'click #medidor_center'(event){
+        // Change UI and sessionVariable to store 50 as equal value
+        const target = event.target;
+        $('#medidor_img').removeClass();
+        $('#cus_range').val(50);
+        $('#medidor').text('Eu acho que as duas alternativas tem o mesmo valor');
+        $('#medidor_img').addClass("fas fa-equals text-info fa-lg");
+        // save 50 (equals) in sessionVar
+        let routeName = FlowRouter.getRouteName();
+        Session.set(routeName, 50);
     },
     'click #next'(event){
         event.preventDefault();
@@ -179,11 +122,14 @@ Template.comparissionTemplate.events({
                 }
             });
         } else {
+            // Use merlin/ when self hosting
             var nextPage = '/page'+nextPageNumber.toString();
         }
         console.log(nextPageNumber);
         $('#cus_range').val(50);
         $('#medidor').text('Arraste o slider para esquerda ou para a direita.');
+        $('#medidor_img').removeClass();
+        $('#medidor_img').addClass("fas fa-arrows-alt-v fa-lg");
         return FlowRouter.go(nextPage);
     }
 });

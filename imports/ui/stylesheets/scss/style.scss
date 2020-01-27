@@ -6,7 +6,7 @@ html, body{
 @media screen and (max-width: 767px) {
     p { font-size: 3vmin; }
     h5 { font-size: 6vmin; }
-    h4 { font-size: 3vmin; }
+    h4 { font-size: 3.7vmin; font-weight: bold;}
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -28,24 +28,25 @@ html, body{
 }
 
 
-.specialCenter {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); /* for IE 9 */
-    -webkit-transform: translate(-50%, -50%); /* for Safari */
-
-    /* optional size in px or %: */
-    // width: 100px;
-    // height: 100px;
-}
+// .specialCenter {
+//     position: absolute;
+//     left: 50%;
+//     top: 45%;
+//     transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%); /* for IE 9 */
+//     -webkit-transform: translate(-50%, -50%); /* for Safari */
+//
+//     /* optional size in px or %: */
+//     // width: 100px;
+//     // height: 100px;
+// }
 
 
 // Code to Invert the Range Input
 $track-w: 34.2em;
 $track-h: .25em;
 $thumb-d: 1.5em;
+$thumb-w: 1.5em;
 $track-c: #ccc;
 
 $mover-w: 12.5em;
@@ -62,73 +63,73 @@ $ruler-u: .1*$mover-w;
 @mixin thumb() {
     box-sizing: border-box;
     border: none;
-    width: $thumb-d; height: $thumb-d;
+    width: $thumb-w; height: $thumb-d;
     border-radius: 50%;
     background: $track-c;
 }
 
 @mixin thumb-focus() { background: #138496; }
 
-.wrap {
-    float: left;
-    position: relative;
-    margin: 0 .5em .5em;
-    padding: .5em;
-    height: $track-w; width: $thumb-d;
-}
-
-[type='range'] {
-    &, &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-    }
-
-    position: absolute;
-    top: 50%; left: 20%;
-    margin: 0;
-    padding: 0;
-    width: $track-w; height: $thumb-d;
-    transform: translate(-50%, -50%)
-    rotate(-90deg);
-    background:
-    repeating-linear-gradient(90deg,
-    $track-c 0,
-    $track-c $ruler-w,
-    transparent 0,
-    transparent $ruler-u)
-    calc(.5*(#{$thumb-d} - #{$ruler-w})) 1.25*$thumb-d/ calc(#{$mover-w} + #{$ruler-w}) .5*$thumb-d no-repeat;
-    font: 1em/1 arial, sans-serif;
-
-    &::-webkit-slider-runnable-track {
-        @include track
-    }
-    &::-moz-range-track { @include track }
-    &::-ms-track { @include track }
-
-    &::-webkit-slider-thumb {
-        margin-top: .5*($track-h - $thumb-d);
-        @include thumb
-    }
-    &::-moz-range-thumb { @include thumb }
-    &::-ms-thumb {
-        margin-top: 0;
-        @include thumb
-    }
-
-    &::-ms-tooltip { display: none }
-
-    ~ label {
-        color: #333;
-
-        span { color: $track-c }
-
-        &:after { margin: -4px; content: ':' }
-    }
-}
+// .wrap {
+//     float: left;
+//     position: relative;
+//     margin: 0 .5em .5em;
+//     padding: .5em;
+//     height: $track-w; width: $thumb-d;
+// }
+//
+// [type='range'] {
+//     &, &::-webkit-slider-thumb {
+//         -webkit-appearance: none;
+//     }
+//
+//     position: absolute;
+//     top: 50%; left: 20%;
+//     margin: 0;
+//     padding: 0;
+//     width: $track-w; height: $thumb-d;
+//     transform: translate(-50%, -50%)
+//     rotate(-90deg);
+//     background:
+//     repeating-linear-gradient(90deg,
+//     $track-c 0,
+//     $track-c $ruler-w,
+//     transparent 0,
+//     transparent $ruler-u)
+//     calc(.5*(#{$thumb-d} - #{$ruler-w})) 1.25*$thumb-d/ calc(#{$mover-w} + #{$ruler-w}) .5*$thumb-d no-repeat;
+//     font: 1em/1 arial, sans-serif;
+//
+//     &::-webkit-slider-runnable-track {
+//         @include track
+//     }
+//     &::-moz-range-track { @include track }
+//     &::-ms-track { @include track }
+//
+//     &::-webkit-slider-thumb {
+//         margin-top: .5*($track-h - $thumb-d);
+//         @include thumb
+//     }
+//     &::-moz-range-thumb { @include thumb }
+//     &::-ms-thumb {
+//         margin-top: 0;
+//         @include thumb
+//     }
+//
+//     &::-ms-tooltip { display: none }
+//
+//     ~ label {
+//         color: #333;
+//
+//         span { color: $track-c }
+//
+//         &:after { margin: -4px; content: ':' }
+//     }
+// }
 
 
 .labels {
     position: absolute;
-    bottom: 0; left: .3*$thumb-d;
+    bottom: 0; left: -.3*$thumb-d;
     transform: translate(-50%, -50%)
     rotate(-90deg);
 
@@ -139,3 +140,117 @@ $ruler-u: .1*$mover-w;
         font-weight: 700
     }
 }
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    cursor: pointer;
+    width: 20px;
+    height: 515px;
+    padding: 0 0px;
+    border: 1px solid #e6e6e6;
+    // background-color: linear-gradient(red, yellow, blue);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, transparent), color-stop(50%,#fff), color-stop(100%,transparent));
+    // background-image: -webkit-gradient(#2c3e50, #bdc3c7,#2c3e50);
+    // background-image: -webkit-linear-gradient(#2c3e50, #bdc3c7,		#2c3e50);
+    // background-image: -moz-linear-gradient(#2c3e50, #bdc3c7,	#2c3e50);
+    // background-image: -ms-linear-gradient(#2c3e50, #bdc3c7,		#2c3e50);
+    // background-image: -o-linear-gradient(#2c3e50, #bdc3c7,		#2c3e50);
+    // background-image: linear-gradient(	#2c3e50, #bdc3c7,		#2c3e50);
+    background: -moz-linear-gradient(#2c3e50, #bdc3c7,		#2c3e50); /* FF3.6-15 */
+    background: -webkit-linear-gradient(#2c3e50, #bdc3c7,		#2c3e50); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(#2c3e50, #bdc3c7,		#2c3e50); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+input[type=range][orient=vertical]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 40px;
+    width: 30px;
+    border-radius: 3px;
+    background: #ffffff;
+    -webkit-appearance: none;
+}
+// input[type=range]{
+//     -webkit-appearance: none;
+//     // margin-top: 50px;
+//     transform: rotate(270deg);
+//     -moz-transform: rotate(270deg);
+//     /* fix for FF unable to apply focus style bug  */
+//     border: 1px solid white;
+//
+//     /*required for proper track sizing in FF*/
+//     width: 300px;
+//     margin-left:-100px;
+// }
+//
+// input[type=range]::-webkit-slider-runnable-track {
+//     width: 300px;
+//     height: 10px;
+//     // transform: translate(-50%, -50%)
+//     //     rotate(-90deg);
+//     background: #ddd;
+//     // border: none;
+//     // border-radius: 3px;
+// }
+//
+// // input[type=range]::-webkit-slider-thumb {
+// //     -webkit-appearance: none;
+// //     border: none;
+// //     height: 16px;
+// //     width: 16px;
+// //     border-radius: 50%;
+// //     background: goldenrod;
+// //     margin-top: -4px;
+// // }
+//
+// input[type=range]:focus {
+//     outline: none;
+//     // transform: translate(-50%, -50%)
+//     //     rotate(-90deg);
+// }
+//
+// input[type=range]:focus::-webkit-slider-runnable-track {
+//     background: #ccc;
+//
+// }
+
+/* Special styling for WebKit/Blink */
+// input[type=range]::-webkit-slider-thumb {
+//     -webkit-appearance: none;
+//     border: 1px solid #000000;
+//     height: 36px;
+//     width: 16px;
+//     border-radius: 3px;
+//     background: #ffffff;
+//     cursor: pointer;
+//     margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+//     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+// }
+//
+// /* All the same stuff for Firefox */
+// input[type=range]::-moz-range-thumb {
+//     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//     border: 1px solid #000000;
+//     height: 36px;
+//     width: 16px;
+//     border-radius: 3px;
+//     background: #ffffff;
+//     cursor: pointer;
+// }
+//
+// /* All the same stuff for IE */
+// input[type=range]::-ms-thumb {
+//     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//     border: 1px solid #000000;
+//     height: 36px;
+//     width: 16px;
+//     border-radius: 3px;
+//     background: #ffffff;
+//     cursor: pointer;
+// }
