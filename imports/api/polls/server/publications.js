@@ -1,4 +1,4 @@
-// All links-related publications
+// All Polls-related publications
 
 import { Meteor } from 'meteor/meteor';
 import { Polls } from '../polls.js';

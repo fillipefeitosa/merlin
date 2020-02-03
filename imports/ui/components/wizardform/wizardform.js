@@ -61,7 +61,12 @@ Template.page1.events({
 });
 
 
-//  ------- PAGE 3 Events --------
+//  ------- comparissionTemplate Events -------- //
+
+Template.comparissionTemplate.onCreated(function () {
+    Meteor.subscribe('polls.all');
+});
+
 
 Template.comparissionTemplate.onRendered(function(){
     $(document).on('input', '#cus_range', function() {
@@ -91,7 +96,7 @@ Template.comparissionTemplate.events({
 
     'change #cus_range'(event){
         const target = event.target;
-        const value = target.value;
+        const value = parseInt(target.value);
         let routeName = FlowRouter.getRouteName()
         Session.set(routeName, value);
     },
@@ -100,7 +105,7 @@ Template.comparissionTemplate.events({
         const target = event.target;
         $('#medidor_img').removeClass();
         $('#cus_range').val(50);
-        $('#medidor').text('Eu acho que as duas alternativas tem o mesmo valor');
+        $('#medidor').text('Não tenho preferência');
         $('#medidor_img').addClass("fas fa-equals text-info fa-lg");
         // save 50 (equals) in sessionVar
         let routeName = FlowRouter.getRouteName();
@@ -110,9 +115,10 @@ Template.comparissionTemplate.events({
         event.preventDefault();
         let url = FlowRouter.current();
         let nextPageNumber = parseInt(url['path'].match(/\d+/))+1;
+        // 16 is the last page.
         if (nextPageNumber==16) {
             var nextPage = '/thanks';
-            const poll = Session.get('Poll.page3');
+            const poll = Session.keys;
             Meteor.call("polls.insert", poll, function(error, result){
                 if(error){
                     console.log("error", error);
@@ -125,7 +131,6 @@ Template.comparissionTemplate.events({
             // Use merlin/ when self hosting
             var nextPage = '/page'+nextPageNumber.toString();
         }
-        console.log(nextPageNumber);
         $('#cus_range').val(50);
         $('#medidor').text('Arraste o slider para esquerda ou para a direita.');
         $('#medidor_img').removeClass();
