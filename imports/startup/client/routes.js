@@ -48,7 +48,7 @@ exposed.route('/page2',{
 exposed.route('/page3',{
     name: 'Poll_page3',
     action: function(){
-        BlazeLayout.render('comparissionTemplate', {imageLeft:'cen1_alt_1_image', descriptionLeft:'cen1_alt_1', imageRight:'cen1_alt_2_image', descriptionRight:'cen1_alt_2'})
+        BlazeLayout.render('comparissionTemplate', {descriptionLeft:'cen1_alt_1',  descriptionRight:'cen1_alt_2'})
     }
 });
 exposed.route('/page4',{

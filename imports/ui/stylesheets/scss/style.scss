@@ -4,9 +4,14 @@ html, body{
 }
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
-    p { font-size: 3vmin; }
+    p { font-size: 4vmin; }
     h5 { font-size: 6vmin; }
     h4 { font-size: 3.7vmin; font-weight: bold;}
+    .headerMargin{
+        // left: 50%;
+        margin-top: 10px;
+    }
+
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -16,31 +21,25 @@ html, body{
 @media (min-width: 992px) and (max-width: 1199px) {
     .headerMargin{
         // left: 50%;
-        margin-top: 25px;
+        margin-top: 16px;
     }
 }
 /* large desktops and up ----------- */
 @media screen and (min-width: 1200px) {
     .headerMargin{
         // left: 50%;
-        margin-top: 25px;
+        margin-top: 16px;
     }
 }
 
 
-// .specialCenter {
-//     position: absolute;
-//     left: 50%;
-//     top: 45%;
-//     transform: translate(-50%, -50%);
-//     -ms-transform: translate(-50%, -50%); /* for IE 9 */
-//     -webkit-transform: translate(-50%, -50%); /* for Safari */
-//
-//     /* optional size in px or %: */
-//     // width: 100px;
-//     // height: 100px;
-// }
+// Images on survey
 
+.illustration img {
+    width: 100%;
+    display: inline;
+    // text-align: center;
+}
 
 // Code to Invert the Range Input
 $track-w: 34.2em;
@@ -126,6 +125,9 @@ $ruler-u: .1*$mover-w;
 //     }
 // }
 
+.medidor{
+    font-weight: bold;
+}
 
 .labels {
     position: absolute;
@@ -146,8 +148,8 @@ input[type=range][orient=vertical]
     writing-mode: bt-lr; /* IE */
     -webkit-appearance: slider-vertical; /* WebKit */
     cursor: pointer;
-    width: 20px;
-    height: 515px;
+    width: 25px;
+    height: 400px;
     padding: 0 0px;
     border: 1px solid #e6e6e6;
     // background-color: linear-gradient(red, yellow, blue);

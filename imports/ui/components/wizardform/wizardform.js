@@ -12,7 +12,6 @@ Template.page1.helpers({
     }
 });
 
-
 Template.page1.events({
     'change #profile_job'(event) {
         const target = event.target;
@@ -29,15 +28,10 @@ Template.page1.events({
         const value = target.value;
         Session.set("profile_sex", value);
     },
-    'change #cus_range'(event){
+    'change #profile_sons'(event){
         const target = event.target;
         const value = target.value;
-        if (value<50) {
-            $('#medidor').text('Eu prefiro a alternativa 1');
-        } else {
-            $('#medidor').text('Eu prefiro a alternativa 2')
-        }
-        Session.set("test_range", value);
+        Session.set("profile_sons", value);
     },
     'click #next'(event){
         sessionVariablesNames = ['profile_job','profile_education','profile_sex'];
@@ -47,11 +41,11 @@ Template.page1.events({
             sessionVar = Session.get(sessionVariablesNames[i]);
             if(sessionVar) sessionVariables.push(sessionVar);
         }
+        console.log(sessionVariables);
         // Check if there are any missing values
         if (sessionVariables.length<sessionVariablesNames.length) {
             window.alert('Por favor, preencha todos os campos de perfil.')
             event.preventDefault();
-
         } else {
             // Default Behavior
             console.log('Comportamento Default. Should Go to next pages');
@@ -79,8 +73,8 @@ Template.comparissionTemplate.onRendered(function(){
         } else if($(this).val()<48){
             $('#medidor').text('Prefiro ligeiramente a de baixo');
             $('#medidor_img').addClass("fas fa-arrow-circle-down text-info fa-lg");
-            if($(this).val()<=30){$('#medidor').text('Prefiro a alternativa de baixo')};
-            if($(this).val()<=10){$('#medidor').text('Prefiro MUITO a alternativa de baixo')};
+            if($(this).val()<=30){$('#medidor').text('Prefiro a alternativa de baixo');};
+            if($(this).val()<=10){$('#medidor').text('Prefiro MUITO a alternativa de baixo');};
         } else if ($(this).val()>52){
             $('#medidor').text('Prefiro ligeiramente a de cima');
             $('#medidor_img').addClass("fas fa-arrow-circle-up text-info fa-lg");
@@ -132,7 +126,7 @@ Template.comparissionTemplate.events({
             var nextPage = '/page'+nextPageNumber.toString();
         }
         $('#cus_range').val(50);
-        $('#medidor').text('Arraste o slider para esquerda ou para a direita.');
+        $('#medidor').text('Arraste para cima ou para baixo.');
         $('#medidor_img').removeClass();
         $('#medidor_img').addClass("fas fa-arrows-alt-v fa-lg");
         return FlowRouter.go(nextPage);
