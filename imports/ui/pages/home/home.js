@@ -1,6 +1,6 @@
-import './home.html';
+import "./home.html";
 
-import '../../components/hello/hello.js';
-import '../../components/info/info.js';
-import '../../components/wizardform/wizardform.js';
-import '../../components/instructions/instructions.js';
+import "../../components/hello/hello.js";
+import "../../components/info/info.js";
+import "../../components/wizardform/wizardform.js";
+import "../../components/instructions/instructions.js";

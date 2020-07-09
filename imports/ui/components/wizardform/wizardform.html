@@ -1,302 +1,416 @@
 <template name="page1">
-    <div class="container">
-        <h1 class="text-center">Perfil</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <form id="profile_job">
-                    <h4>Indique a função que exerce: </h4>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="0">
-                        <label class="form-check-label" for="exampleRadios1">
-                            Professor/a
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="1">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Educador/a
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Funcionário não docente na área da educação/ensino
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="3">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Membro de uma associação de país
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Representante político
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Funcionário autárquico
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Outro
-                        </label>
-                    </div>
-                </form>
+  <div class="container">
+    <h1 class="text-center">Perfil</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form id="profile_job">
+          <h4>Indique a função que exerce:</h4>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios1"
+              value="0"
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              Professor/a
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="1"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Educador/a
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="2"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Funcionário não docente na área da educação/ensino
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="3"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Membro de uma associação de país
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="4"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Representante político
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="5"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Funcionário autárquico
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="5"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Outro
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <form id="profile_education">
+          <h4>Indique o nível máximo de qualificação que alcançou:</h4>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios1"
+              value="0"
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              Inferior ao ensino básico completo (9º ano)
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="1"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Ensino básico completo
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="2"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Ensino secundário completo
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="3"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Curso superior completo
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="4"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Mestrado
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="5"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Doutoramento
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br /><br />
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <form id="profile_sons">
+          <h4>
+            Quantidade de filhos em idade escolar:
+            <input
+              type="number"
+              name="quantity"
+              id="profile_sons"
+              value="0"
+              min="0"
+              max="9"
+            />
+          </h4>
+          <br /><br />
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <form id="profile_location">
+          <h4>
+            Local de Residência (município ou cidade):
+            <input type="text" name="location" id="profile_location" />
+          </h4>
+        </form>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <form id="profile_sex">
+          <h4>
+            Indique seu género:
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  name="options"
+                  id="option1"
+                  autocomplete="off"
+                  value="0"
+                />
+                Masculino
+              </label>
+              <label class="btn btn-secondary">
+                <input
+                  type="radio"
+                  name="options"
+                  id="option2"
+                  autocomplete="off"
+                  value="1"
+                />
+                Feminino
+              </label>
             </div>
-            <div class="col-md-6">
-                <form id="profile_education">
-                    <h4>Indique o nível máximo de qualificação que alcançou: </h4>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="0" >
-                        <label class="form-check-label" for="exampleRadios1">
-                            Inferior ao ensino básico completo (9º ano)
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="1">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Ensino básico completo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Ensino secundário completo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="3">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Curso superior completo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Mestrado
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Doutoramento
-                        </label>
-                    </div>
-                </form>
-            </div>
+          </h4>
+          <br /><br />
+        </form>
 
-        </div>
-        <br><br>
-
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <form id="profile_sons">
-                    <h4>Quantidade de filhos em idade escolar: <input type="number" name="quantity" id="profile_sons" value='0' min="0" max="9"></h4>
-                    <br><br>
-
-                </form>
-
-
-            </div>
-
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <form id="profile_sex">
-                    <h4>Indique seu género:
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option1" autocomplete="off" value="0"> Masculino
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options" id="option2" autocomplete="off" value="1"> Feminino
-                            </label>
-                        </div>
-                    </h4>
-                    <br><br>
-
-                </form>
-
-                <!-- <label for="cus_range">Custom range</label>
+        <!-- <label for="cus_range">Custom range</label>
 
                 <input type="range" class="custom-range" id="cus_range" name="range"> -->
-            </div>
-
-
-        </div>
-
-        <br><br>
-        <a class="btn btn-info float-right" href="/merlin/page2" id='next' role="button">Próximo</a>
+      </div>
     </div>
+
+    <br /><br />
+    <a
+      class="btn btn-info float-right"
+      href="/merlin/page2"
+      id="next"
+      role="button"
+      >Próximo</a
+    >
+  </div>
 </template>
 <template name="test">
-    <div class="container h-100 d-flex">
-        <div class="jumbotron my-auto">
-            <h1 class="display-3">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        </div>
+  <div class="container h-100 d-flex">
+    <div class="jumbotron my-auto">
+      <h1 class="display-3">Hello, world!</h1>
+      <p class="lead">
+        This is a simple hero unit, a simple jumbotron-style component for
+        calling extra attention to featured content or information.
+      </p>
     </div>
-    <div class="note small bg-light p-2">
-        Vertical align single element in full height flexbox container
-    </div>
-
+  </div>
+  <div class="note small bg-light p-2">
+    Vertical align single element in full height flexbox container
+  </div>
 </template>
 
 <template name="comparissionTemplate">
-    <div class="container specialCenter">
-        <div class="container">
-
-            <div class="row h-100 headerMargin">
-                <div class="col-sm-12 text-center headerMargin">
-                    <!-- HEADER principal -->
-                    <h4 class="headerMargin">Indique qual cenário é melhor arrastando a barra para cima ou para baixo</h4>
-                </div>
-            </div>
+  <div class="container specialCenter">
+    <div class="container">
+      <div class="row h-100 headerMargin">
+        <div class="col-sm-12 text-center headerMargin">
+          <!-- HEADER principal -->
+          <h4 class="headerMargin">
+            Indique qual cenário é melhor arrastando a barra para cima ou para
+            baixo
+          </h4>
         </div>
-        <br>
-        <div class="row align-items-center h-100">
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <!-- Sample 1 -->
+      </div>
+    </div>
+    <br />
+    <div class="row align-items-center h-100">
+      <div class="col-10">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <!-- Sample 1 -->
 
-                        {{> Template.dynamic template=descriptionLeft}}
-                        <!-- END of Sample 1 -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-10 text-right" >
-                        <h4 id='medidor' class="medidor">
-                            Ajuste a barra
-                        </h4>
-                    </div>
-                    <div class="col-2 text-left">
-                        <i class="fas fa-arrows-alt-v fa-lg"  id="medidor_img"></i>
-
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <!-- Sample 2 -->
-                        {{> Template.dynamic template=descriptionRight}}
-                        <!-- END of Sample 2 -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- <input id="slider2" orient='vertical' class="custom-range slider" type ="range" min ="100" max="500" step ="50" value ="100"/> -->
-            <div class="col-2 text-left">
-                <!-- Slider Vertical -->
-                <input type="range" orient='vertical' class="custom-range slider" id="cus_range" name="range" list="dl" min ="0" max="100" step ="16.66" value ="50">
-                <label for="cus_range">
-                    <div class="labels" aria-hidden="true"><span style="--i: 10.2;"><h5 id="medidor_center">O</h5></span>
-                    </div>
-                </label>
-                <datalist id="dl">
-                    <option value="50" label="iguais"></option>
-                </datalist>
-            </div>
+            {{> Template.dynamic template=descriptionLeft}}
+            <!-- END of Sample 1 -->
+          </div>
         </div>
+        <div class="row">
+          <div class="col-10 text-right">
+            <h4 id="medidor" class="medidor">
+              Ajuste a barra
+            </h4>
+          </div>
+          <div class="col-2 text-left">
+            <i class="fas fa-arrows-alt-v fa-lg" id="medidor_img"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <!-- Sample 2 -->
+            {{> Template.dynamic template=descriptionRight}}
+            <!-- END of Sample 2 -->
+          </div>
+        </div>
+      </div>
 
-
-        <br>
-        <a class="btn btn-info float-right" href='/page' id='next' role="button">Próximo</a>
+      <!-- <input id="slider2" orient='vertical' class="custom-range slider" type ="range" min ="100" max="500" step ="50" value ="100"/> -->
+      <div class="col-2 text-left">
+        <!-- Slider Vertical -->
+        <input
+          type="range"
+          orient="vertical"
+          class="custom-range slider"
+          id="cus_range"
+          name="range"
+          list="dl"
+          min="0"
+          max="100"
+          step="16.66"
+          value="50"
+        />
+        <label for="cus_range">
+          <div class="labels" aria-hidden="true">
+            <span style="--i: 10.2;"><h5 id="medidor_center">O</h5></span>
+          </div>
+        </label>
+        <datalist id="dl">
+          <option value="50" label="iguais"></option>
+        </datalist>
+      </div>
     </div>
 
+    <br />
+    <a class="btn btn-info float-right" href="/page" id="next" role="button"
+      >Próximo</a
+    >
+  </div>
 </template>
 
 <!-- Cenário 1 - Alternativa 1 -->
 
 <template name="cen1_alt_1">
-
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture1.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture1.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 <!-- Cenário 1 - Alternativa 2 -->
 <template name="cen1_alt_2">
-
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture2.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture2.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 
 <!-- Cenário 1 - Alternativa 3 -->
 <template name="cen1_alt_3">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture3.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture3.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 
 <!-- Cenário 1 - Alternativa 4 -->
 
 <template name="cen1_alt_4">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture4.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture4.png" style="max-width: 500px;" />
     </div>
-
-
+  </div>
 </template>
 
 <!-- CENÁRIO 2 TEMPLATES -->
 <!-- Cenário 2 - Alternativa 1 -->
 
 <template name="cen2_alt_1">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture5.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture5.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 <!-- Cenário 2 - Alternativa 2 -->
 
 <template name="cen2_alt_2">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture6.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture6.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 
 <!-- Cenário 2 - Alternativa 3 -->
 <template name="cen2_alt_3">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture7.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture7.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
 
 <!-- Cenário 2 - Alternativa 4 -->
 
 <template name="cen2_alt_4">
-    <div class='section content'>
-        <div class='illustration'>
-            <img src='img/Picture8.png' style='max-width: 500px'/>
-        </div>
+  <div class="section content">
+    <div class="illustration">
+      <img src="img/Picture8.png" style="max-width: 500px;" />
     </div>
-
+  </div>
 </template>
